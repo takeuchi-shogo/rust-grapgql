@@ -1,0 +1,33 @@
+
+query GetUser {
+	users {
+		id
+		name
+	}
+}
+
+mutation CreateUser {
+	createUser(data: {
+		name: "hoge",
+		password: "password"
+	}) {
+		name
+	}
+}
+
+query GetTodo {
+	todos {
+		text
+		done
+	}
+}
+
+mutation CreateTodo {
+	createTodo(data: {
+		text: "test 1",
+		done: false
+	}) {
+		text
+		done
+	}
+}

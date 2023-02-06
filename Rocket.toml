@@ -1,0 +1,24 @@
+# For more information take a look at https://rocket.rs/guide/configuration/
+[global.limits]
+graphql = 131072
+
+## defaults for _all_ profiles
+[default]
+address = "0.0.0.0"
+
+## set only when compiled in debug mode, i.e, `cargo build`
+[development]
+port = 8000
+workers = 4
+log = "normal"
+secret_key= "rust-go-dev"
+
+[staging]
+port = 8000
+workers = 4
+log = "normal"
+
+[production]
+port = 8000
+workers = 4
+log = "critical"

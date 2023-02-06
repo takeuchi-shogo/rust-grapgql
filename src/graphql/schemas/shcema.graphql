@@ -1,0 +1,38 @@
+
+type QueryRoot {
+	users: Users!
+	todos: Todos!
+	todo: Todos!
+}
+
+# type Users
+type Users {
+	id: ID!
+	name: String!
+	password: String!
+}
+
+type Todos {
+	id: ID!
+	text: String!
+	done: bool!
+}
+
+# root opration
+type Mutation {
+	createUser(data: UserCreateInput!): Users!
+	createTodo(data: TodoCreateInput!): Todos!
+}
+
+# type input user
+input UserCreateInput {
+	id: ID
+	name: String!
+	password: String!
+}
+
+input TodoCreateInput {
+	id: ID
+	text: String!
+	done: bool!
+}
